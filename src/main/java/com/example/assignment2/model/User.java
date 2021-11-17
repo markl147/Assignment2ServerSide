@@ -2,13 +2,13 @@ package com.example.assignment2.model;
 
 public class User {
 
-    private String email;
     private String name;
+    private String email;
     private String password;
 
-    public User(String e, String n, String p) {
-        this.email = e;
+    public User(String n,String e, String p) {
         this.name = n;
+        this.email = e;
         this.password = p;
     }
 

@@ -7,6 +7,8 @@
     <title>Show Motorbikes JSP</title>
 </head>
 <body>
+
+<h1>Here is a list of all motorbikes in the database</h1>
 <c:forEach items="${myList}" var="motorbike">
     Bike ID: <c:out value="${motorbike.motorbikeID }"/><br>
     Bike Name: <c:out value="${motorbike.email }"/><br>

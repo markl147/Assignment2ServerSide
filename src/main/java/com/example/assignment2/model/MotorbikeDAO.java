@@ -28,11 +28,7 @@ public enum MotorbikeDAO {
         return con;
     }
 
-    private String motorbikeID;
-    private String email;
-    private String make;
-    private String model;
-    private String cc;
+
 
     public Motorbike selectOne(String email) throws Exception {
         Connection conn = getConnection();
@@ -42,7 +38,7 @@ public enum MotorbikeDAO {
 
             if(rs.getString("email").equals(email)) {
 
-                Motorbike m = new Motorbike(rs.getString("motorbikeID"), rs.getString("email"),
+                Motorbike m = new Motorbike(rs.getString("email"),
                         rs.getString("make"),
                         rs.getString("model"),rs.getString("cc"));
                 return m;
@@ -57,11 +53,11 @@ public enum MotorbikeDAO {
         Connection conn = getConnection();
         PreparedStatement psmt = conn.prepareStatement("INSERT INTO MOTORBIKE(null, email, make, model, cc) VALUES (?,?,?,?,?)");
 
-        psmt.setString(1, m.getMotorbikeID());
-        psmt.setString(2, m.getEmail());
-        psmt.setString(3, m.getMake());
-        psmt.setString(4, m.getModel());
-        psmt.setString(5, m.getCc());
+//        psmt.setString(1, m.getMotorbikeID());
+        psmt.setString(1, m.getEmail());
+        psmt.setString(2, m.getMake());
+        psmt.setString(3, m.getModel());
+        psmt.setString(4, m.getCc());
         psmt.executeUpdate();
         psmt.close();
         conn.close();
@@ -73,7 +69,7 @@ public enum MotorbikeDAO {
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM MOTORBIKE");
         while (rs.next()) {
-            Motorbike m = new Motorbike(rs.getString("motorbikeID"), rs.getString("email"),
+            Motorbike m = new Motorbike(rs.getString("email"),
                     rs.getString("make"),
                     rs.getString("model"),rs.getString("cc"));
             listOfMotorbikes.add(m);

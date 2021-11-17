@@ -30,11 +30,11 @@
             <td><input type = "text" name="CC"></td>
         </tr>
         <tr>
-            <td><button type = "submit" formmethod="controller here" formaction="post">Create</button></td>
-            <td><button type = "submit" formmethod="controller here" formaction="post">Show users bikes</button></td>
+<%--            <td><button type = "submit" formmethod="controller here" formaction="post">Create</button></td>--%>
+            <td><button type = "submit" formmethod="MotorbikeController" formaction="post">Show users bikes</button></td>
             <td><button type = "submit" formmethod="MotorbikeController" formaction="post">Show all bikes</button></td>
-            <td><button type = "submit" formmethod="controller here" formaction="post">Update</button></td>
-            <td><button type = "submit" formmethod="controller here" formaction="post">Delete</button></td>
+<%--            <td><button type = "submit" formmethod="controller here" formaction="post">Update</button></td>--%>
+<%--            <td><button type = "submit" formmethod="controller here" formaction="post">Delete</button></td>--%>
         </tr>
     </table>
 </form>

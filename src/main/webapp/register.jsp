@@ -6,10 +6,11 @@
 </head>
 <body>
 
-<h1>Your email is not recognized, please register</h1><br>
+<h1>Your email is not recognized, please register</h1>
+
 <form method="post" action="RegisterController">
-    Email: <input type="email" name="userEmail"/><br>
     Name: <input type="text" name="userName"/><br>
+    Email: <input type="email" name="userEmail"/><br>
     Password: <input type="text" name="userPassword"/><br>
     <input type="submit" value="Register"/>
 </form>

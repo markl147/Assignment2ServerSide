@@ -21,7 +21,7 @@ import com.example.assignment2.model.UserDAO;
 @WebServlet("/UserController")
 public class UserController extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    ArrayList<User> users = null;
+//    ArrayList<User> users = null;
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -61,6 +61,7 @@ public class UserController extends HttpServlet {
 
                 for (int i = 0; i < users.size(); i++) {
 
+                    System.out.println(users.get(i).getEmail() + users.get(i).getPassword());
                     System.out.println("Start for loop");
                     if (email.equals(users.get(i).getEmail())) {
                         userFound++;

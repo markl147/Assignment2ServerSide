@@ -49,12 +49,15 @@ public enum UserDAO {
     public void save(User u) throws Exception{
 
         Connection conn = getConnection();
-        PreparedStatement psmt = conn.prepareStatement("INSERT INTO USER(null, email, name, password) VALUES (?,?,?,?)");
 
-        psmt.setString(1, u.getEmail());
+        PreparedStatement psmt = conn.prepareStatement("INSERT INTO USER(id, name, email, password) VALUES (?,?,?,?)");
+
+        psmt.setString(1, null);
         psmt.setString(2, u.getName());
-        psmt.setString(3, u.getPassword());
+        psmt.setString(3, u.getEmail());
+        psmt.setString(4, u.getPassword());
         psmt.executeUpdate();
+
         psmt.close();
         conn.close();
     }

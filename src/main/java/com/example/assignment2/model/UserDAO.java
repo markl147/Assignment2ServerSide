@@ -68,7 +68,7 @@ public enum UserDAO {
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM USER");
         while (rs.next()) {
-            User u = new User(rs.getString("email"), rs.getString("name"), rs.getString("password"));
+            User u = new User(rs.getString("name"), rs.getString("email"), rs.getString("password"));
             listOfUsers.add(u);
         }
         return listOfUsers;

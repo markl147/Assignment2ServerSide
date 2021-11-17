@@ -61,7 +61,7 @@ public class UserController extends HttpServlet {
 
                 for (int i = 0; i < users.size(); i++) {
 
-                    System.out.println(users.get(i).getEmail() + users.get(i).getPassword());
+                    System.out.println("email: " + users.get(i).getEmail() + "password: " + users.get(i).getPassword());
                     System.out.println("Start for loop");
                     if (email.equals(users.get(i).getEmail())) {
                         userFound++;
@@ -81,16 +81,13 @@ public class UserController extends HttpServlet {
                     request.getRequestDispatcher("index.jsp").forward(request, response);
                 }else if(userFound ==2){
                     HttpSession session = request.getSession();
-                    System.out.println(u1.getName());
+                    System.out.println("name found: " + u1.getName() + "password found: " + u1.getPassword());
                     session.setAttribute("User", u1);
                     request.setAttribute("myUser", u1);
                     request.getRequestDispatcher("showUser.jsp").forward(request, response);
                 }else {
                     System.out.println("something seriously wrong");
                 }
-
-
-
 
         } catch (Exception e) {
             System.out.println("information could not be retrieved user controller");

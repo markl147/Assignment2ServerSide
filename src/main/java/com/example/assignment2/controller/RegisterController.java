@@ -50,7 +50,7 @@ public class RegisterController extends HttpServlet {
         String email = request.getParameter("userEmail");
         String password = request.getParameter("userPassword");
 
-        User u1 = new User(email, name, password);
+        User u1 = new User(name, email, password);
 
         System.out.println(name + email + password);
         try {

@@ -36,7 +36,7 @@
             <td><button type = "submit" formmethod="post" formaction="MotorbikeController">Show users bikes</button></td>
             <td><button type = "submit" formmethod="post" formaction="AllMotorbikeController">Show all bikes</button></td>
             <td><button type = "submit" formmethod="post" formaction="updateMotorbike.jsp">Update</button></td>
-            <td><button type = "submit" formmethod="post" formaction="controller">Delete</button></td>
+            <td><button type = "submit" formmethod="post" formaction="deleteMotorbike.jsp">Delete</button></td>
         </tr>
     </table>
 </form>

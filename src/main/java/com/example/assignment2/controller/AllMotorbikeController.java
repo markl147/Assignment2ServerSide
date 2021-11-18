@@ -1,30 +1,22 @@
 package com.example.assignment2.controller;
 
+import com.example.assignment2.model.Motorbike;
+import com.example.assignment2.model.MotorbikeDAO;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import com.example.assignment2.model.Motorbike;
-import com.example.assignment2.model.MotorbikeDAO;
-import com.example.assignment2.model.UserDAO;
-
-/**
- * Servlet implementation class MotorbikeController
- */
-@WebServlet("/MotorbikeController")
-public class MotorbikeController extends HttpServlet {
+@WebServlet(name = "AllMotorbikeController", value = "/AllMotorbikeController")
+public class AllMotorbikeController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MotorbikeController() {
+    public AllMotorbikeController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -50,20 +42,8 @@ public class MotorbikeController extends HttpServlet {
             e.printStackTrace();
         }
 
-
-        HttpSession session = request.getSession();
-        String emailMBC = (String)session.getAttribute("userEmail");
-//        System.out.println("Motorbike controller: " + email);
-        ArrayList<Motorbike> listOfMotorbikes = new ArrayList<>();
-        try {
-                listOfMotorbikes = (MotorbikeDAO.instance.selectOne(emailMBC));
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println(e);
-        }
-
-
-        request.setAttribute("myList", listOfMotorbikes);
+        request.setAttribute("myList", allMotorbikes);
         request.getRequestDispatcher("showMotorbikes.jsp").forward(request, response);
     }
+
 }

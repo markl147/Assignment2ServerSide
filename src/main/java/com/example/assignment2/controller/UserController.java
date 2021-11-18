@@ -83,6 +83,8 @@ public class UserController extends HttpServlet {
                     HttpSession session = request.getSession();
                     System.out.println("name found: " + u1.getName() + "password found: " + u1.getPassword());
                     session.setAttribute("User", u1);
+                    session.setAttribute("userEmail", u1.getEmail());
+                    session.setAttribute("userName", u1.getName());
                     request.setAttribute("myUser", u1);
                     request.getRequestDispatcher("showUser.jsp").forward(request, response);
                 }else {

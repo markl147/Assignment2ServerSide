@@ -30,21 +30,24 @@ public enum MotorbikeDAO {
 
 
 
-    public Motorbike selectOne(String email) throws Exception {
+    public ArrayList<Motorbike> selectOne(String email) throws Exception {
+        ArrayList<Motorbike> mb = new ArrayList<>();
         Connection conn = getConnection();
         Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM MOTORBIKE where email ='" + email +"'");
+        System.out.println(email);
+        ResultSet rs = stmt.executeQuery("SELECT * FROM MOTORBIKE where EMAIL ='" + email +"'");
         while(rs.next()) {
 
             if(rs.getString("email").equals(email)) {
 
-                Motorbike m = new Motorbike(rs.getString("email"),
+                Motorbike m = new Motorbike(rs.getString("motorbikeID"),rs.getString("email"),
                         rs.getString("make"),
                         rs.getString("model"),rs.getString("cc"));
-                return m;
+                System.out.println("m id: " + m.getMotorbikeID() + "m email: " + m.getEmail() + "m make: " + m.getMake() + "m model: " + m.getModel() +"m cc: " + m.getCc());
+                mb.add(m);
             }
         }
-        return null;
+        return mb;
     }
 
 
@@ -69,7 +72,7 @@ public enum MotorbikeDAO {
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM MOTORBIKE");
         while (rs.next()) {
-            Motorbike m = new Motorbike(rs.getString("email"),
+            Motorbike m = new Motorbike(rs.getString("motorbikeID"),rs.getString("email"),
                     rs.getString("make"),
                     rs.getString("model"),rs.getString("cc"));
             listOfMotorbikes.add(m);

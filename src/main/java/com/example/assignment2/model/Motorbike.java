@@ -2,23 +2,23 @@ package com.example.assignment2.model;
 
 public class Motorbike {
 
-//    private String motorbikeID;
+    private String motorbikeID;
     private String email;
     private String make;
     private String model;
     private String cc;
 
-    public Motorbike(String email, String make, String model, String cc) {
-//        this.motorbikeID = motorbikeID;
+    public Motorbike(String motorbikeID, String email, String make, String model, String cc) {
+        this.motorbikeID = motorbikeID;
         this.email = email;
         this.make = make;
         this.model = model;
         this.cc = cc;
     }
 
-//    public String getMotorbikeID() { return motorbikeID; }
-//
-//    public void setMotorbikeID(String motorbikeID) { this.motorbikeID = motorbikeID; }
+    public String getMotorbikeID() { return motorbikeID; }
+
+    public void setMotorbikeID(String motorbikeID) { this.motorbikeID = motorbikeID; }
 
     public String getEmail() {
         return email;

@@ -66,6 +66,25 @@ public enum MotorbikeDAO {
         conn.close();
     }
 
+    public void update(String motorbikeID, String email, String make, String model, String cc) throws Exception {
+        System.out.println("before connection");
+        Connection conn = getConnection();
+        Statement stmt = conn.createStatement();
+        System.out.println("before update 1");
+        PreparedStatement psmt = conn.prepareStatement("UPDATE MOTORBIKE SET make = '" + make + "' WHERE motorbikeID = '" + motorbikeID + "' and email ='" + email + "'");
+        System.out.println("After update 1");
+        PreparedStatement psmt2 = conn.prepareStatement("UPDATE MOTORBIKE SET model = '" + model + "' WHERE motorbikeID = '" + motorbikeID + "' and email ='" + email + "'");
+        System.out.println("After update 2");
+        PreparedStatement psmt3 = conn.prepareStatement("UPDATE MOTORBIKE SET cc = '" + cc + "' WHERE motorbikeID = '" + motorbikeID + "' and email ='" + email + "'");
+        psmt.executeUpdate();
+        psmt2.executeUpdate();
+        psmt3.executeUpdate();
+        psmt.close();
+        psmt2.close();
+        psmt3.close();
+        conn.close();
+    }
+
     public ArrayList<Motorbike> list() throws Exception{
         ArrayList<Motorbike> listOfMotorbikes = new ArrayList();
         Connection conn = getConnection();

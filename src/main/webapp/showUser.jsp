@@ -32,11 +32,10 @@
 <%--        </tr>--%>
         <tr>
 <%--            <td><a href="createMotorbike.jsp"><button type="submit">Create</button></a></td>--%>
-    <td><button type = "submit" formmethod="post" formaction="createMotorbike.jsp">Create new</button></td>
-
-    <td><button type = "submit" formmethod="post" formaction="MotorbikeController">Show users bikes</button></td>
+            <td><button type = "submit" formmethod="post" formaction="createMotorbike.jsp">Create new</button></td>
+            <td><button type = "submit" formmethod="post" formaction="MotorbikeController">Show users bikes</button></td>
             <td><button type = "submit" formmethod="post" formaction="AllMotorbikeController">Show all bikes</button></td>
-            <td><button type = "submit" formmethod="post" formaction="controller">Update</button></td>
+            <td><button type = "submit" formmethod="post" formaction="updateMotorbike.jsp">Update</button></td>
             <td><button type = "submit" formmethod="post" formaction="controller">Delete</button></td>
         </tr>
     </table>

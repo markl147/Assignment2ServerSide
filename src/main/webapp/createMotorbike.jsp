@@ -1,0 +1,26 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Mark
+  Date: 18/11/2021
+  Time: 00:45
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Create Motorbike JSP</title>
+</head>
+<body>
+<h1>Please enter the new motorbikes details for this user</h1>
+<form method="post" action="CreateMotorbike">
+<%--    Motorbike ID: <input type="text" name="motorbikeID"/><br>--%>
+    Email: <input type="hidden" name="motorbikeEmail" value="${sessionScope.User.email}"/><br>
+    Make: <input type="text" name="motorbikeMake"/><br>
+    Model: <input type="text" name="motorbikeModel"/><br>
+    CC: <input type="text" name="motorbikeCc"/><br>
+    <input type="submit" value="Add to DB"/>
+</form>
+
+</body>
+</html>

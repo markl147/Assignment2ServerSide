@@ -54,13 +54,13 @@ public enum MotorbikeDAO {
     public void save(Motorbike m) throws Exception{
 
         Connection conn = getConnection();
-        PreparedStatement psmt = conn.prepareStatement("INSERT INTO MOTORBIKE(null, email, make, model, cc) VALUES (?,?,?,?,?)");
+        PreparedStatement psmt = conn.prepareStatement("INSERT INTO MOTORBIKE(motorbikeID, email, make, model, cc) VALUES (?,?,?,?,?)");
 
-//        psmt.setString(1, m.getMotorbikeID());
-        psmt.setString(1, m.getEmail());
-        psmt.setString(2, m.getMake());
-        psmt.setString(3, m.getModel());
-        psmt.setString(4, m.getCc());
+        psmt.setString(1, null);
+        psmt.setString(2, m.getEmail());
+        psmt.setString(3, m.getMake());
+        psmt.setString(4, m.getModel());
+        psmt.setString(5, m.getCc());
         psmt.executeUpdate();
         psmt.close();
         conn.close();

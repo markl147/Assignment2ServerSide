@@ -13,28 +13,31 @@
 <%--   User Email: <c:out value="${sessionScope.User.email}"/><br>--%>
 
    <h1>Welcome ${sessionScope.User.name}</h1>
-   <br>
-   <br>
 <form>
     <table>
         <tr>
-            <td>Make</td>
-            <td><input type = "text" name="make"></td>
+            <td><input type = "hidden" name="email" value="${sessionScope.User.email}"></td>
         </tr>
+<%--        <tr>--%>
+<%--            <td>Make</td>--%>
+<%--            <td><input type = "text" name="make"></td>--%>
+<%--        </tr>--%>
+<%--        <tr>--%>
+<%--            <td>Model</td>--%>
+<%--            <td><input type = "text" name="model"></td>--%>
+<%--        </tr>--%>
+<%--        <tr>--%>
+<%--            <td>CC</td>--%>
+<%--            <td><input type = "text" name="CC"></td>--%>
+<%--        </tr>--%>
         <tr>
-            <td>Model</td>
-            <td><input type = "text" name="model"></td>
-        </tr>
-        <tr>
-            <td>CC</td>
-            <td><input type = "text" name="CC"></td>
-        </tr>
-        <tr>
-            <td><button type = "submit" formmethod="controller here" formaction="post">Create</button></td>
-            <td><button type = "submit" formmethod="post" formaction="MotorbikeController">Show users bikes</button></td>
+<%--            <td><a href="createMotorbike.jsp"><button type="submit">Create</button></a></td>--%>
+    <td><button type = "submit" formmethod="post" formaction="createMotorbike.jsp">Create new</button></td>
+
+    <td><button type = "submit" formmethod="post" formaction="MotorbikeController">Show users bikes</button></td>
             <td><button type = "submit" formmethod="post" formaction="AllMotorbikeController">Show all bikes</button></td>
-            <td><button type = "submit" formmethod="controller here" formaction="post">Update</button></td>
-            <td><button type = "submit" formmethod="controller here" formaction="post">Delete</button></td>
+            <td><button type = "submit" formmethod="post" formaction="controller">Update</button></td>
+            <td><button type = "submit" formmethod="post" formaction="controller">Delete</button></td>
         </tr>
     </table>
 </form>

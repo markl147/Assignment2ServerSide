@@ -47,44 +47,37 @@ public class UserController extends HttpServlet {
 
 
         String name = request.getParameter("userName");
-        System.out.println("name input: " + name);
         String email = request.getParameter("userEmail");
         String password = request.getParameter("userPassword");
 
         User u1 = new User(name, email, password);
 
-
         try {
             ArrayList<User> users = UserDAO.instance.list();
-            System.out.println("Start try");
             int userFound = 0;
 
                 for (int i = 0; i < users.size(); i++) {
 
-                    System.out.println("email: " + users.get(i).getEmail() + "password: " + users.get(i).getPassword());
-                    System.out.println("Start for loop");
                     if (email.equals(users.get(i).getEmail())) {
                         userFound++;
-                        System.out.println("Start email if");
                         if (password.equals(users.get(i).getPassword())) {
                            u1 = users.get(i);
                             userFound++;
                         }
                     }
                 }
-            System.out.println("userFound: " + userFound);
+
                 if(userFound==0) {
                     request.getRequestDispatcher("register.jsp").forward(request, response);
-                    System.out.println("email does not exist please register");
                 }else if(userFound ==1) {
-                    System.out.println("First else");
                     request.getRequestDispatcher("index.jsp").forward(request, response);
                 }else if(userFound ==2){
                     HttpSession session = request.getSession();
-                    System.out.println("name found: " + u1.getName() + "password found: " + u1.getPassword());
                     session.setAttribute("User", u1);
+
                     session.setAttribute("userEmail", u1.getEmail());
                     session.setAttribute("userName", u1.getName());
+
                     request.setAttribute("myUser", u1);
                     request.getRequestDispatcher("showUser.jsp").forward(request, response);
                 }else {
@@ -94,7 +87,7 @@ public class UserController extends HttpServlet {
         } catch (Exception e) {
             System.out.println("information could not be retrieved user controller");
             // TODO Auto-generated catch block
-            //e.printStackTrace();
+            e.printStackTrace();
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }

@@ -9,16 +9,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Create Motorbike JSP</title>
+    <title>Create Motorbike</title>
 </head>
 <body>
-<h1>Please enter the new motorbikes details for this user</h1>
+<h1>Please enter the new motorbikes details for ${sessionScope.User.name}</h1>
 <form method="post" action="CreateMotorbike">
 <%--    Motorbike ID: <input type="text" name="motorbikeID"/><br>--%>
-    Email: <input type="hidden" name="motorbikeEmail" value="${sessionScope.User.email}"/><br>
-    Make: <input type="text" name="motorbikeMake"/><br>
-    Model: <input type="text" name="motorbikeModel"/><br>
-    CC: <input type="text" name="motorbikeCc"/><br>
+    Email:  <input type="text" readonly name="motorbikeEmail" value="${sessionScope.User.email}"/><br>
+    Make:   <input type="text" name="motorbikeMake"/><br>
+    Model:  <input type="text" name="motorbikeModel"/><br>
+    CC:     <input type="text" name="motorbikeCc"/><br>
     <input type="submit" value="Add to DB"/>
 </form>
 

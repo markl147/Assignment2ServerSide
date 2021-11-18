@@ -53,13 +53,11 @@ public class MotorbikeController extends HttpServlet {
 
         HttpSession session = request.getSession();
         String emailMBC = (String)session.getAttribute("userEmail");
-//        System.out.println("Motorbike controller: " + email);
         ArrayList<Motorbike> listOfMotorbikes = new ArrayList<>();
         try {
                 listOfMotorbikes = (MotorbikeDAO.instance.selectOne(emailMBC));
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println(e);
         }
 
 

@@ -34,7 +34,6 @@ public enum MotorbikeDAO {
         ArrayList<Motorbike> mb = new ArrayList<>();
         Connection conn = getConnection();
         Statement stmt = conn.createStatement();
-        System.out.println(email);
         ResultSet rs = stmt.executeQuery("SELECT * FROM MOTORBIKE where EMAIL ='" + email +"'");
         while(rs.next()) {
 
@@ -43,7 +42,6 @@ public enum MotorbikeDAO {
                 Motorbike m = new Motorbike(rs.getString("motorbikeID"),rs.getString("email"),
                         rs.getString("make"),
                         rs.getString("model"),rs.getString("cc"));
-                System.out.println("m id: " + m.getMotorbikeID() + "m email: " + m.getEmail() + "m make: " + m.getMake() + "m model: " + m.getModel() +"m cc: " + m.getCc());
                 mb.add(m);
             }
         }
@@ -90,17 +88,13 @@ public enum MotorbikeDAO {
             Connection conn = getConnection();
             Statement stmt = conn.createStatement();
 
-            System.out.println("Before prepared");
             PreparedStatement psmt = conn.prepareStatement("DELETE FROM MOTORBIKE where motorbikeID = '" + motorbikeID + "' and email = '" + email +"'");
-            System.out.println("after prepared");
             psmt.executeUpdate();
 
-            System.out.println("after execute");
             psmt.close();
 
             conn.close();
         }catch(Exception e){
-            System.out.println("Something went wrong");
             e.printStackTrace();
         }
     }

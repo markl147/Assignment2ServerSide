@@ -45,5 +45,4 @@ public class AllMotorbikeController extends HttpServlet {
         request.setAttribute("myList", allMotorbikes);
         request.getRequestDispatcher("showMotorbikes.jsp").forward(request, response);
     }
-
 }

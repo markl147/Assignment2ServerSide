@@ -24,7 +24,6 @@ public class UpdateMotorbike extends HttpServlet {
         String model = request.getParameter("motorbikeModel");
         String cc = request.getParameter("motorbikeCc");
 
-        System.out.println();
         try {
             MotorbikeDAO.instance.update(motorbikeID, email, make, model, cc);
             request.getRequestDispatcher("AllMotorbikeController").forward(request, response);

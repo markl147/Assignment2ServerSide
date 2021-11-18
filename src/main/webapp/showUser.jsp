@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Show User JSP</title>
+    <title>Show User</title>
 </head>
 <body>
 <%--   User Name: <c:out value="${sessionScope.User.name}"/><br>--%>
@@ -18,23 +18,18 @@
         <tr>
             <td><input type = "hidden" name="email" value="${sessionScope.User.email}"></td>
         </tr>
-<%--        <tr>--%>
-<%--            <td>Make</td>--%>
-<%--            <td><input type = "text" name="make"></td>--%>
-<%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td>Model</td>--%>
-<%--            <td><input type = "text" name="model"></td>--%>
-<%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td>CC</td>--%>
-<%--            <td><input type = "text" name="CC"></td>--%>
-<%--        </tr>--%>
+
         <tr>
-<%--            <td><a href="createMotorbike.jsp"><button type="submit">Create</button></a></td>--%>
-            <td><button type = "submit" formmethod="post" formaction="createMotorbike.jsp">Create new</button></td>
             <td><button type = "submit" formmethod="post" formaction="MotorbikeController">Show users bikes</button></td>
             <td><button type = "submit" formmethod="post" formaction="AllMotorbikeController">Show all bikes</button></td>
+        </tr>
+
+        <tr>
+            <td><button type = "submit" formmethod="post" formaction="ShowAllUsersController">Show all users</button></td>
+            <td><button type = "submit" formmethod="post" formaction="createMotorbike.jsp">Create new</button></td>
+        </tr>
+
+        <tr>
             <td><button type = "submit" formmethod="post" formaction="updateMotorbike.jsp">Update</button></td>
             <td><button type = "submit" formmethod="post" formaction="deleteMotorbike.jsp">Delete</button></td>
         </tr>

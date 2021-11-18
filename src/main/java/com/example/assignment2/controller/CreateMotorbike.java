@@ -46,9 +46,8 @@ public class CreateMotorbike extends HttpServlet {
             request.getRequestDispatcher("AllMotorbikeController").forward(request, response);
 
         } catch (Exception e) {
-            System.out.println("information could not be retrieved register controller");
             // TODO Auto-generated catch block
-            //e.printStackTrace();
+            e.printStackTrace();
             request.getRequestDispatcher("createMotorbike.jsp").forward(request, response);
         }
     }

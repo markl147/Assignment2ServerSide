@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Index JSP</title>
+    <title>Index</title>
 </head>
 <body>
 <form method="post" action="UserController">
